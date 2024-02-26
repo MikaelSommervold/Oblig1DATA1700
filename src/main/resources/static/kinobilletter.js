@@ -9,6 +9,20 @@ function submitForm() {
     let telefon = document.getElementById("telefon").value;
     let epost = document.getElementById("epost").value;
 
+    // Validates phone number using regex
+    const telefonRegex = /^[0-9]{3} [0-9]{2} [0-9]{3}|[0-9]{8}$/;
+    if (!telefonRegex.test(telefon)) {
+        alert("Vennligst skriv et gyldig telefonnummer (8 siffer)");
+        return;
+    }
+
+    // Validates email using regex
+    const epostRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!epostRegex.test(epost)) {
+        alert("Vennligst skriv en gyldig epostadresse");
+        return;
+    }
+
     // Create an object to represent the ticket
     let ticket = {
         film: film,

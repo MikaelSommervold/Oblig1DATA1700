@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <script src="kinobilletter.js"></script>
     <title>Kinobilletter</title>
     <style>
         /* Style for the ticket table/table under Alle Billetter */
@@ -49,9 +50,9 @@
     <label for="etternavn">Etternavn:</label><br>
     <input type="text" id="etternavn" name="etternavn" min="1" max="255" required><br>
     <label for="telefon">Telefonnr:</label><br>
-    <input type="tel" id="telefon" name="telefon" pattern="[0-9]{3} [0-9]{2} [0-9]{3}|[0-9]{8}" required title="Vennligst skriv ett gyldig telefon nummer"><br>
+    <input type="tel" id="telefon" name="telefon"><br> <!--removed required code and replaced it with regex in javascript-->
     <label for="epost">Epost:</label><br>
-    <input type="email" id="epost" name="epost" required title="Vennligst skriv en gyldig epost addresse"><br><br>
+    <input type="email" id="epost" name="epost"><br><br> <!--removed required code and replaced it with regex in javascript-->
     <input type="submit" value="Kjøp Billett">
 </form>
 
@@ -62,7 +63,7 @@
 <br>
 <button onclick="slettAlle()">Slett alle billettene</button>
 <!--Clicking this button executes the slettAlle script, deleting the values in the array-->
-<script src="kinobilletter.js"></script>
+
 
 </body>
 </html>
